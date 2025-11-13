@@ -41,6 +41,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --color-crimson: #d00000;
+  --color-crimson-glow: #ff1a1a;
 }
 
 :root {
@@ -112,11 +115,45 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer base {
+/* @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+} */
+
+@layer base {
+ * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-black text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+@layer utilities {
+  .crimson-glow {
+    box-shadow: 0 0 15px #d00000;
+  }
+  .crimson-glow-hover:hover {
+    box-shadow: 0 0 15px #ff1a1a;
+  }
+  .text-crimson {
+    color: #d00000;
+  }
+  .bg-crimson {
+    background-color: #d00000;
+  }
+  .border-crimson {
+    border-color: #d00000;
   }
 }
