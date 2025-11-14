@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import StarField from "@/components/StarField";
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -11,6 +12,7 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
+      <StarField />
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/50 to-black"></div>
       <motion.div
         style={{ y }}
