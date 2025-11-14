@@ -22,7 +22,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 text-crimson">
               THE CRIMSON FORGE
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed w-[75%]">
+            <p className="text-gray-400 text-sm leading-relaxed w-full md:w-[75%]">
               Forging the tools of power for those who dare to rise. Every piece
               is crafted with precision and tested in the fires of combat.
             </p>
@@ -66,15 +66,15 @@ const Footer = () => {
             </h4>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <Flame className="w-4 h-4 text-crimson mt-1 flex-shrink-0" />
+                <Flame className="w-4 h-4 text-crimson mt-1 hrink-0" />
                 <p className="text-gray-400 text-sm">Forged to Endure</p>
               </div>
               <div className="flex items-start gap-3">
-                <Shield className="w-4 h-4 text-crimson mt-1 flex-shrink-0" />
+                <Shield className="w-4 h-4 text-crimson mt-1 shrink-0" />
                 <p className="text-gray-400 text-sm">Quality Guaranteed</p>
               </div>
               <div className="flex items-start gap-3">
-                <Zap className="w-4 h-4 text-crimson mt-1 flex-shrink-0" />
+                <Zap className="w-4 h-4 text-crimson mt-1 shrink-0" />
                 <p className="text-gray-400 text-sm">Power Amplified</p>
               </div>
             </div>
