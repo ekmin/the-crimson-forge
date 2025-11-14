@@ -5,6 +5,7 @@ import {
 import "../globals.css";
 import { dark } from '@clerk/themes'
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "The Crimson Forge",
@@ -26,6 +27,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
     </ClerkProvider>
