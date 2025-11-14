@@ -3,6 +3,7 @@ import {
   ClerkProvider
 } from '@clerk/nextjs'
 import "../globals.css";
+import { dark } from '@clerk/themes'
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
@@ -16,7 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider dynamic>
+    <ClerkProvider dynamic appearance={{
+        theme: dark,
+      }}>
     <html lang="en">
       <body
         className="flex flex-col min-h-screen"

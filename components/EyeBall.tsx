@@ -41,10 +41,10 @@ const EyeBall = () => {
   return (
     <div
       ref={eyeRef}
-      className="w-10 h-10 rounded-full flex items-center justify-center shadow-[0_0_10px_2px_#ff0000_inset,0_0_10px_2px_#ff0000]"
+      className="w-9 h-9 rounded-full flex items-center justify-center shadow-[0_0_10px_2px_#ff0000_inset,0_0_10px_2px_#ff0000]"
     >
       <div
-        className="w-3 h-3 shadow-[0_0_10px_2px_#ff0000_inset,0_0_10px_2px_#ff0000] rounded-full "
+        className="w-2 h-2 shadow-[0_0_10px_2px_#ff0000_inset,0_0_10px_2px_#ff0000] rounded-full "
         style={{
           transform: `translate(${pupilPosition.x}px, ${pupilPosition.y}px)`,
         }}
