@@ -21,7 +21,7 @@ const Starfiled = () => {
           y: ['0%', '-200px'],
         }}
         transition={{
-          duration: 120,
+          duration: 60,
           ease: 'linear',
           repeat: Infinity,
         }}
