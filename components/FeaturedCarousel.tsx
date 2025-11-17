@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { Product } from "@/sanity/lib/types";
 import Image from "next/image";
 import imageUrl from "@/lib/imageUrl";
+import PortableText from "react-portable-text";
 
 interface FeaturedCarouselProps {
   products: Product[];
@@ -59,9 +60,25 @@ const FeaturedCarousel = ({ products }: FeaturedCarouselProps) => {
           <p className="text-3xl font-bold text-crimson mb-6">
             ${product.price.toLocaleString()}
           </p>
-          <p className="text-gray-300 mb-8 leading-relaxed">
-            {/* {product.description} */}
-          </p>
+          <PortableText
+            className="text-gray-300 mb-8 leading-relaxed"
+            content={product.description}
+            serializers={{
+              h1: (props: string[]) => (
+                <h1 className="text-crimson" {...props} />
+              ),
+              strong: (props: string[]) => (
+                <h1 className="font-bold" {...props} />
+              ),
+              normal: (props: string[]) => <p className="mb-3" {...props} />,
+              li: ({ children }: any) => (
+                <li className="text-gray-300 flex items-start gap-3">
+                  <Check className="w-5 h-5 text-crimson" />
+                  {children}
+                </li>
+              ),
+            }}
+          />
 
           <div className="flex gap-4">
             <Link
