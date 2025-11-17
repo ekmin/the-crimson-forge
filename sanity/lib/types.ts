@@ -1,5 +1,3 @@
-import { PortableTextBlock } from "next-sanity";
-
 export interface Category {
   _id: string;
   title: string;
