@@ -72,3 +72,27 @@ export const getProductbyId = async (id: string) => {
     return { _id: "", _type: "product", name: "", slug: { current: "" }, price: 0, categories: [], description: "", image: undefined, stock: 0, featured: false};
   }
 };
+
+export const getProductsbyCategory = async (categorySlug: string) => {
+  const GET_PRODUCTS_BY_CAT = defineQuery(`*[_type == "product" && "${categorySlug}" in categories[]->slug.current]{
+  _id,
+  name,
+  "slug": slug.current,
+  price,
+  categories,
+  image,
+  description,
+  stock,
+  featured
+}`);
+  try {
+    const products = await client.fetch<Product[]>(
+      GET_PRODUCTS_BY_CAT,
+      {}
+    );
+    return products || [];
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    return [];
+  }
+};

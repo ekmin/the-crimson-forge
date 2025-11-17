@@ -97,7 +97,7 @@ const CategoryCarousel = ({ categories }: CategoryCarouselProps) => {
               className="shrink-0 w-full sm:w-1/2 lg:w-1/4 group bg-[#111111] border border-[#1a1a1a] rounded-lg p-8 text-center transition-all duration-200 hover:border-crimson crimson-glow-hover"
               key={index}
             >
-              <Link href="/products" className="">
+              <Link href={`/products?category=${category.slug}`} className="">
                 <Icon className="w-12 h-12 mx-auto mb-4 text-crimson" />
                 <h3 className="text-lg font-bold text-white group-hover:text-crimson transition-colors duration-200">
                   {category.title}
