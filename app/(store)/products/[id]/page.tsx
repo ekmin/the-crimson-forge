@@ -4,7 +4,8 @@ import PortableText from "react-portable-text";
 import Link from "next/link";
 import Image from "next/image";
 import imageUrl from "@/lib/imageUrl";
-import { Button } from "@/components/ui/button";
+import AddToCartButton from "@/components/AddToCartButton";
+import { Product } from "@/sanity/lib/types";
 
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
@@ -38,7 +39,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-[#111111] border border-[#1a1a1a] rounded-lg p-12 flex items-center justify-center relative">
+          <div className="bg-[#111111] border border-[#1a1a1a] rounded-lg p-12 flex items-center justify-center relative min-h-[300px]">
             {product.image && (
               <Image
                 src={imageUrl(product.image).url()}
@@ -51,7 +52,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
           <div>
             <p className="text-sm text-crimson mb-2 tracking-wider">Category</p>
-            <h1 className="text-5xl font-black mb-6 text-white">
+            <h1 className="text-xl md:text-5xl font-black mb-6 text-white">
               {product.name}
             </h1>
             <p className="text-4xl font-bold text-crimson mb-8">
@@ -81,13 +82,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                 }}
               />
             )}
-            {/* <AddToCartButton product={product} /> */}
-            <Button
-              size="lg"
-              className="w-full bg-crimson hover:bg-[#ff1a1a] text-white font-bold text-lg tracking-wider crimson-glow-hover transition-all duration-200"
-            >
-              ADD TO CART
-            </Button>
+            <AddToCartButton product={product as Product} />
           </div>
         </div>
       </div>

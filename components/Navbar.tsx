@@ -15,6 +15,7 @@ import {
   SignedOut,
 } from "@clerk/nextjs";
 import { Button } from "./ui/button";
+import useCartStore from "@/app/(store)/store";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -45,6 +46,10 @@ const Navbar = () => {
     { href: "/products", label: "PRODUCTS" },
     { href: "/orders", label: "MY ORDERS" },
   ];
+
+  const itemCount = useCartStore((state) => 
+    state.items.reduce((total, item) => total + item.quantity, 0)
+  )
 
   const NavLink = ({ href, label }: { href: string; label: string }) => (
     <Link
@@ -102,7 +107,7 @@ const Navbar = () => {
               <div className="flex items-center gap-2">
                 <ShoppingCart className="w-5 h-5" />
                 <span className="absolute -top-2 -right-2 bg-crimson text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center crimson-glow">
-                  1
+                  {itemCount}
                 </span>
               </div>
               <span
@@ -118,7 +123,7 @@ const Navbar = () => {
                 <SignInButton mode="modal">
                   <Button
                     size="sm"
-                    className="border-2 border-crimson hover:bg-crimson-glow text-gray-400 hover:text-white px-5 py-5 crimson-glow-hover transition-all duration-200 cursor-pointer"
+                    className="border-2 border-crimson hover:bg-crimson-glow bg-transparent text-gray-400 hover:text-white px-5 py-5 crimson-glow-hover transition-all duration-200 cursor-pointer"
                   >
                     LOG IN
                   </Button>
@@ -156,7 +161,7 @@ const Navbar = () => {
               <div className="flex items-center gap-2">
                 <ShoppingCart className="w-5 h-5" />
                 <span className="absolute -top-2 -right-2 bg-crimson text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center crimson-glow">
-                  1
+                  {itemCount}
                 </span>
               </div>
             </Link>
