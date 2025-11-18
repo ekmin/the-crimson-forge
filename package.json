@@ -11,6 +11,7 @@
   "dependencies": {
     "@clerk/nextjs": "^6.35.1",
     "@clerk/themes": "^2.4.36",
+    "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-slot": "^1.2.4",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^4.15.0",
@@ -20,12 +21,15 @@
     "lucide-react": "^0.553.0",
     "next": "16.0.3",
     "next-sanity": "^11.6.6",
+    "next-themes": "^0.4.6",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-portable-text": "^0.6.0",
     "sanity": "^4.15.0",
+    "shadcn": "^3.5.0",
     "styled-components": "^6.1.19",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
