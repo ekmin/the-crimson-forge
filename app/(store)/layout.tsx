@@ -4,6 +4,7 @@ import {
 } from '@clerk/nextjs'
 import "../globals.css";
 import { dark } from '@clerk/themes'
+import { ThemeProvider } from "@/components/ThemeProvider"
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -21,13 +22,20 @@ export default function RootLayout({
     <ClerkProvider dynamic appearance={{
         theme: dark,
       }}>
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className="flex flex-col min-h-screen"
       >
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
         <Navbar />
         {children}
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
     </ClerkProvider>
