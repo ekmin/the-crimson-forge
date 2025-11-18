@@ -1,5 +1,3 @@
-import MyLoader from "../../public/wind-toy.svg"
-
 const loading = () => {
   return (
     <div className="flex items-center h-screen justify-center">
