@@ -87,12 +87,6 @@ const FeaturedCarousel = ({ products }: FeaturedCarouselProps) => {
             >
               VIEW DETAILS
             </Link>
-            <Link
-              href={`/products/${product._id}`}
-              className="border border-crimson text-crimson hover:bg-crimson hover:text-white px-8 py-3 rounded-lg font-bold tracking-wider transition-all duration-200"
-            >
-              ADD TO CART
-            </Link>
           </div>
         </div>
       </div>

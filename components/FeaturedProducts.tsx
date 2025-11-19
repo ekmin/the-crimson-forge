@@ -17,8 +17,7 @@ const FeaturedProducts = async () => {
           <div className="text-center mt-12">
             <Link href="/products">
               <Button
-                variant="outline"
-                className="border-crimson bg-transparent text-crimson hover:bg-crimson hover:text-white font-bold tracking-wider transition-all duration-200 cursor-pointer"
+                className="border border-crimson bg-transparent text-crimson hover:bg-crimson hover:text-white font-bold tracking-wider transition-all duration-200 cursor-pointer"
               >
                 VIEW ALL PRODUCTS
               </Button>
