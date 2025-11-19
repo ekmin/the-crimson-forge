@@ -51,12 +51,6 @@ const page = () => {
     );
   }
 
-  // groupedItems.map((item, i) => {
-  //   item.product.categories.map((cat) => {
-  //     console.log(cat.title)
-  //   })
-  // })
-
   return (
     <div className="min-h-screen bg-black py-30">
       <div className="container mx-auto px-6">
@@ -89,12 +83,16 @@ const page = () => {
                   >
                     {item.product.name}
                   </h3>
-                  <p className="text-sm text-gray-400 mb-4">{item.product.categories.map((category) => category.title).join(" | ")}</p>
+                  <p className="text-sm text-gray-400 mb-4">
+                    {item.product.categories
+                      .map((category) => category.title)
+                      .join(" | ")}
+                  </p>
                   <p className="text-xl font-bold text-crimson">
                     ${item.product.price * item.quantity}
                   </p>
                 </div>
-
+                
                 <CartButtons product={item.product} />
               </div>
             ))}
