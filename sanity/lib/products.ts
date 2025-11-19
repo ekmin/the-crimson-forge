@@ -8,7 +8,11 @@ export const getAllProducts = async () => {
   name,
   "slug": slug.current,
   price,
-  categories,
+  "categories": categories[]->{
+    title,
+    slug,
+    icon
+  },
   image,
   description,
   stock,
@@ -32,7 +36,11 @@ export const getFeaturedProducts = async () => {
   name,
   "slug": slug.current,
   price,
-  categories,
+  "categories": categories[]->{
+    title,
+    slug,
+    icon
+  },
   image,
   description,
   stock,
@@ -55,7 +63,11 @@ export const getProductbyId = async (id: string) => {
   name,
   "slug": slug.current,
   price,
-  categories,
+  "categories": categories[]->{
+    title,
+    slug,
+    icon
+  },
   image,
   description,
   stock,
@@ -79,7 +91,11 @@ export const getProductsbyCategory = async (categorySlug: string) => {
   name,
   "slug": slug.current,
   price,
-  categories,
+  "categories": categories[]->{
+    title,
+    slug,
+    icon
+  },
   image,
   description,
   stock,

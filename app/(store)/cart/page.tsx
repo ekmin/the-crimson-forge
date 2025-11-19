@@ -89,7 +89,7 @@ const page = () => {
                   >
                     {item.product.name}
                   </h3>
-                  {/* <p className="text-sm text-gray-400 mb-4">{item.product.categories.map((category, i) => <i key={i}>{category.title}</i>)}</p> */}
+                  <p className="text-sm text-gray-400 mb-4">{item.product.categories.map((category) => category.title).join(" | ")}</p>
                   <p className="text-xl font-bold text-crimson">
                     ${item.product.price * item.quantity}
                   </p>

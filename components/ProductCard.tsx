@@ -27,7 +27,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <h3 className="text-base font-bold mb-2 text-white tracking-wider group-hover:text-crimson transition-colors duration-200">
             {product.name}
           </h3>
-          <p className="text-sm text-gray-400 mb-4">category</p>
+          <p className="text-sm text-gray-400 mb-4">{product.categories.map(cat => cat.title).join(" | ")}</p>
           <p className="text-lg font-bold text-crimson">${product.price.toLocaleString()}</p>
         </div>
       </div>

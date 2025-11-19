@@ -51,7 +51,17 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           </div>
 
           <div>
-            <p className="text-sm text-crimson mb-2 tracking-wider">Category</p>
+            <div className="flex gap-3 mb-2">
+              {product.categories.map((cat) => (
+                <Link
+                  key={cat._id}
+                  href={`/products?category=${cat.slug.current}`}
+                  className="text-sm text-crimson tracking-wider"
+                >
+                  {cat.title}
+                </Link>
+              ))}
+            </div>
             <h1 className="text-xl md:text-5xl font-black mb-6 text-white">
               {product.name}
             </h1>
