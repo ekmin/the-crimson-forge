@@ -1,7 +1,9 @@
 import { getAllProducts, getProductsbyCategory } from "@/sanity/lib/products";
+import { getAllCategories } from "@/sanity/lib/categories";
 import ProductCard from "@/components/ProductCard";
+import CategorySelector from "@/components/CategorySelector";
 
-const page = async ({
+const Products = async ({
   searchParams,
 }: {
   searchParams: { category: string };
@@ -9,6 +11,7 @@ const page = async ({
   const { category } = await searchParams;
   const allProducts = await getAllProducts();
   const categoryProducts = await getProductsbyCategory(category);
+  const allCategories = await getAllCategories();
 
   return (
     <div className="min-h-screen bg-black py-30">
@@ -20,6 +23,10 @@ const page = async ({
           <p className="text-center text-gray-400 text-lg">
             Every weapon forged, every armor crafted for those who command power
           </p>
+        </div>
+
+        <div className="flex justify-end text-center mb-4">
+          <CategorySelector categories={allCategories} param={category} />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -38,4 +45,4 @@ const page = async ({
   );
 };
 
-export default page;
+export default Products;
