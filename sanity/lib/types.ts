@@ -1,7 +1,7 @@
 export interface Category {
   _id: string;
   title: string;
-  slug: { current: string };
+  slug: string;
   icon: string;
   description?: string;
 }
@@ -21,4 +21,24 @@ export interface Product {
   description?: any;
   stock?: number;
   featured?: boolean;
+}
+
+export interface OrderItem {
+  product: Product;
+  quantity: number;
+}
+
+export interface Order {
+  _id: string;
+  _type: "order";
+  clerkUserId: string;
+  customerName: string;
+  customerEmail: string;
+  address: string;
+  items: OrderItem[];
+  totalPrice: number;
+  paymentMethod: "card" | "cod";
+  paymentStatus: "paid" | "pending" | "failed" | "refunded";
+  deliveryStatus: "processing" | "shipped" | "delivered" | "canceled";
+  orderDate: Date;
 }
