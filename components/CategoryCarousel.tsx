@@ -84,6 +84,7 @@ const CategoryCarousel = ({ categories }: CategoryCarouselProps) => {
         style={{ x }}
         className="flex gap-4 active:cursor-grabbing"
         drag="x"
+        dragConstraints={{ right: 0 }}
         dragElastic={0.05}
         onDragStart={() => setHovering(true)}
         onDragEnd={() => setHovering(false)}

@@ -123,7 +123,7 @@ const Navbar = () => {
                 <SignInButton mode="modal">
                   <Button
                     size="sm"
-                    className="border-2 border-crimson hover:bg-crimson-glow bg-transparent text-gray-400 hover:text-white px-5 py-5 crimson-glow-hover transition-all duration-200 cursor-pointer"
+                    className="border-2 border-crimson hover:bg-crimson-glow bg-transparent text-gray-400 hover:text-white px-4 py-4 crimson-glow-hover transition-all duration-200 cursor-pointer"
                   >
                     LOG IN
                   </Button>

@@ -51,7 +51,7 @@ const CategorySelector = ({
 
   return (
     <Select value={selectedCategory} onValueChange={handleSelectChange}>
-      <SelectTrigger className="w-[180px] border-crimson bg-black text-gray-300">
+      <SelectTrigger className="w-[180px] border-crimson border-2 bg-black text-gray-300">
         <SelectValue placeholder="Select a category" />
       </SelectTrigger>
       <SelectContent>

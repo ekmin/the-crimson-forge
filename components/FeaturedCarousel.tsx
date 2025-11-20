@@ -83,7 +83,7 @@ const FeaturedCarousel = ({ products }: FeaturedCarouselProps) => {
           <div className="flex gap-4">
             <Link
               href={`/products/${product._id}`}
-              className="bg-crimson hover:bg-[#ff1a1a] text-white px-8 py-3 rounded-lg font-bold tracking-wider transition-all duration-200 crimson-glow-hover"
+              className="bg-crimson hover:bg-crimson text-white px-8 py-3 rounded-lg font-bold tracking-wider transition-all duration-200 crimson-glow-hover"
             >
               VIEW DETAILS
             </Link>
