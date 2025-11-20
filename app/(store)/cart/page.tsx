@@ -5,17 +5,15 @@ import Link from "next/link";
 import { ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import useCartStore from "../store";
-import { SignInButton, useAuth, useUser } from "@clerk/nextjs";
+import { SignInButton, useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import imageUrl from "@/lib/imageUrl";
 import CartButtons from "@/components/CartButtons";
-import loading from "../loading";
 
-const page = () => {
+const Cart = () => {
   const groupedItems = useCartStore((state) => state.getGroupedItems());
   const { isSignedIn } = useAuth();
-  const { user } = useUser();
   const router = useRouter();
 
   const [isClient, setIsClient] = useState(false);
@@ -42,7 +40,7 @@ const page = () => {
           </h1>
           <p className="text-gray-400 mb-8">The forge awaits your selection</p>
           <Link href="/products">
-            <Button className="bg-crimson hover:bg-[#ff1a1a] crimson-glow-hover font-bold tracking-wider text-white">
+            <Button className="bg-crimson hover:bg-crimson-glow crimson-glow-hover font-bold tracking-wider text-white cursor-pointer">
               BROWSE ARSENAL
             </Button>
           </Link>
@@ -132,12 +130,14 @@ const page = () => {
               </div>
 
               {isSignedIn ? (
+                <Link href="/checkout">
                 <Button
                   size="lg"
                   className="w-full bg-crimson hover:bg-crimson-glow text-white font-bold text-lg tracking-wider crimson-glow-hover transition-all duration-200 mb-4 cursor-pointer"
                 >
                   PROCEED TO CHECKOUT
                 </Button>
+                </Link>
               ) : (
                 <SignInButton mode="modal">
                   <Button
@@ -166,4 +166,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Cart;
