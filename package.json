@@ -11,7 +11,9 @@
   "dependencies": {
     "@clerk/nextjs": "^6.35.1",
     "@clerk/themes": "^2.4.36",
+    "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^4.15.0",
