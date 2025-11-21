@@ -2,6 +2,7 @@
 
 import { backendClient } from "@/sanity/lib/backendClient";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { CartItem } from "../store";
 
 interface userType {
@@ -39,5 +40,6 @@ export async function createOrder(data: {
       orderDate: new Date().toISOString(),
     });
 
+    revalidatePath("/store/orders");
     redirect(`/success/${order._id}`);
 }
