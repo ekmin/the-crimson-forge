@@ -18,7 +18,7 @@ export const getOrdersByUserId = async (userId: string) => {
       _id,
       name,
       price,
-      image,
+      image{asset->{url}},
       "slug": slug.current,
       categories[]->{
         _id,
@@ -32,7 +32,7 @@ export const getOrdersByUserId = async (userId: string) => {
   try {
     const orders = await client.fetch<Order[]>(GET_ORDERS_BY_USERID, {
       userId,
-    });
+    }, { cache: "no-store" });
     return orders || [];
   } catch (error) {
     console.error("Error fetching categories:", error);
