@@ -157,3 +157,11 @@
     border-color: #d00000;
   }
 }
+
+  .button-primary {
+    @apply bg-crimson hover:bg-crimson-glow font-bold tracking-wider text-white cursor-pointer rounded-lg transition-all duration-200;
+  }
+
+  .button-secondary {
+    @apply bg-transparent hover:bg-crimson border-2 border-crimson font-bold tracking-wider text-crimson hover:text-white cursor-pointer rounded-lg transition-colors duration-200;
+  }
