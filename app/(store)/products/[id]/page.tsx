@@ -7,7 +7,7 @@ import imageUrl from "@/lib/imageUrl";
 import AddToCartButton from "@/components/AddToCartButton";
 import { Product } from "@/sanity/lib/types";
 
-const page = async ({ params }: { params: Promise<{ id: string }> }) => {
+const ProductbyId = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
   const product = await getProductbyId(id);
 
@@ -55,7 +55,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
               {product.categories.map((cat) => (
                 <Link
                   key={cat._id}
-                  href={`/products?category=${cat.slug.current}`}
+                  href={`/products?category=${cat.slug}`}
                   className="text-sm text-crimson tracking-wider"
                 >
                   {cat.title}
@@ -100,4 +100,4 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   );
 };
 
-export default page;
+export default ProductbyId;
