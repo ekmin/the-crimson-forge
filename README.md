@@ -106,7 +106,7 @@ This identity helps the store feel like a true extension of the Star Wars univer
     * Realtime updates using revalidatePath()
     * Cancel Order option (updates Sanity via server action)
 
-## Tech Stack ⚙️
+## Tech Stack 🛠️
 | Requirement  | Technology |
 | -------------|-------------|
 | Framework    | Next.js 16 (App Router) |
@@ -129,3 +129,26 @@ This identity helps the store feel like a true extension of the Star Wars univer
 All fields are modeled to represent real product data, categories, and order details.
 
 > Product images are taken from [Wookieepedia | Fandom](https://starwars.fandom.com/wiki/Main_Page)
+
+## Backend (Sanity Studio) ⚙️
+
+Here are a few views of the content management system (CMS) that powers this site.
+![sanityStudio](https://github.com/ekmin/the-crimson-forge/blob/master/public/sanity-snapshots/studio-home.gif)
+
+### Product Schema
+
+This snapshot shows the structured fields used to define a new product.
+![productSchema](https://github.com/ekmin/the-crimson-forge/blob/master/public/sanity-snapshots/productSchema.gif)
+
+To update the fileds, all you have to do is the change the filed and click "publish"
+![productSchema](https://github.com/ekmin/the-crimson-forge/blob/master/public/sanity-snapshots/productUpdate.gif)
+
+### Category Schema
+
+This snapshot shows the structured fields used to define a category.
+![productSchema](https://github.com/ekmin/the-crimson-forge/blob/master/public/sanity-snapshots/categorySchema.gif)
+
+### Order Schema
+
+This snapshot shows the structured fields of a customer's order.
+![productSchema](https://github.com/ekmin/the-crimson-forge/blob/master/public/sanity-snapshots/orderSchema.gif)
