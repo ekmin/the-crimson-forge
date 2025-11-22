@@ -54,13 +54,12 @@ const ProductbyId = async ({ params }: { params: Promise<{ id: string }> }) => {
           <div>
             <div className="flex gap-3 mb-2">
               {product.categories.map((cat) => (
-                <Link
+                <p
                   key={cat._id}
-                  href={`/products?category=${cat.slug}`}
                   className="text-sm text-crimson tracking-wider"
                 >
                   {cat.title}
-                </Link>
+                </p>
               ))}
             </div>
             <h1 className="text-2xl md:text-5xl font-black mb-6 text-white">
