@@ -13,7 +13,7 @@ export interface Product {
   slug: { _type: "slug"; current: string };
   price: number;
   categories: Category[];
-  image?: {
+  image: {
     _type: "image";
     asset: { _ref: string; _type: "reference" };
     hotspot?: boolean;
