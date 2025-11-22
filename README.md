@@ -71,7 +71,8 @@ This identity helps the store feel like a true extension of the Star Wars univer
 ## Pages Explained ✨
 
 1. Home Page
-    * Hero banner
+    * Hero section
+    * Moving starfield
     * Category carousel
     * Featured products
     * All categories dynamically fetched from Sanity
@@ -79,13 +80,14 @@ This identity helps the store feel like a true extension of the Star Wars univer
 
 2. Products Page
     * Displays all products
-    * Dynamic filtering using ?category= query
+    * Dynamic filtering using ?category=query
     * Category selector built with Shadcn select
     * Fully dynamic products using GROQ
 
 3. Cart Page
     * Uses global Zustand store
     * Increase/decrease quantity
+    * Remove all
     * Total price display
     * Checkout button
 
@@ -98,7 +100,7 @@ This identity helps the store feel like a true extension of the Star Wars univer
 
 5. Success Page
     * Confirms order completion
-    * Interactive animation
+    * Linear animation
     * Revalidate the orders path
 
 6. My Orders Page (Protected)
