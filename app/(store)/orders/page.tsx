@@ -12,7 +12,7 @@ import CancelOrderButton from "@/components/CancelOrderButton";
 
 const statusBadge = (status?: string) => {
   const s = (status || "").toLowerCase();
-  if (s.includes("paid") || s.includes("delivered") || s.includes("complete"))
+  if (s.includes("paid") || s.includes("delivered"))
     return "bg-emerald-600 text-white";
   if (s.includes("pending") || s.includes("processing"))
     return "bg-amber-500 text-black";
@@ -53,10 +53,10 @@ const Orders = async () => {
     <div className="min-h-screen bg-black py-30">
       <div className="container mx-auto px-6">
         <div className="mb-12">
-          <h1 className="text-5xl font-black mb-4 text-white text-center">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-black mb-4 text-white text-center">
             My Orders
           </h1>
-          <p className="text-center text-gray-400 text-lg">
+          <p className="text-center text-gray-400 text-sm md:text-lg">
             The chronicles of your forged acquisitions
           </p>
         </div>
@@ -69,7 +69,7 @@ const Orders = async () => {
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
-                  <p className="text-lg uppercase md:text-2xl font-bold text-white">
+                  <p className="text-base md:text-lg lg:text-xl uppercase font-bold text-white">
                     Order #{order._id}
                   </p>
                   <p className="text-gray-400 text-sm mt-1">
@@ -120,25 +120,23 @@ const Orders = async () => {
                             />
                           </div>
 
-                          <div className="flex-1 min-w-0">
+                          <div className="flex-1">
                             <div className="flex items-start justify-between gap-4">
                               <div>
-                                <p className="text-white font-semibold truncate">
+                                <p className="text-white font-semibold text-sm md:text-base">
                                   {product.name || "Unnamed product"}
                                 </p>
-                                <p className="text-gray-400 text-sm mt-1 truncate">
-                                  {product.description
-                                    ? String(product.description).slice(0, 120)
-                                    : ""}
+                                <p className="text-gray-400 text-sm mt-1">
+                                  {product.categories.map((cat) => cat.title).join(", ")}
                                 </p>
                               </div>
 
                               <div className="text-right">
                                 <p className="text-white font-medium">
-                                  {product.price || 0}
+                                  {(product.price).toLocaleString() || 0}
                                 </p>
                                 <p className="text-gray-400 text-sm">
-                                  {item.quantity} x
+                                  x {item.quantity}
                                 </p>
                               </div>
                             </div>
@@ -154,7 +152,7 @@ const Orders = async () => {
                   <div className="mt-3 space-y-2 text-gray-300 text-sm">
                     <div className="flex justify-between">
                       <span>Subtotal</span>
-                      <span>{order.totalPrice ?? order.totalPrice ?? 0}</span>
+                      <span>{(order.totalPrice).toLocaleString() ?? 0}</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Shipping</span>
@@ -162,7 +160,7 @@ const Orders = async () => {
                     </div>
                     <div className="flex justify-between border-t border-gray-700 pt-2 text-white font-bold">
                       <span>Total</span>
-                      <span>{order.totalPrice ?? 0}</span>
+                      <span>{(order.totalPrice).toLocaleString() ?? 0}</span>
                     </div>
                   </div>
 

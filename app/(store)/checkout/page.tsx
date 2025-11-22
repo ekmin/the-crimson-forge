@@ -18,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import imageUrl from "@/lib/imageUrl";
+import CreditIcon from "@/components/CreditIcon";
 
 const Checkout = () => {
   const groupedItems = useCartStore((state) => state.getGroupedItems());
@@ -70,10 +71,10 @@ const Checkout = () => {
     <div className="min-h-screen bg-black py-30">
       <div className="container mx-auto px-6">
         <div className="mb-12">
-          <h1 className="text-3xl lg:text-5xl font-black mb-4 text-white text-center">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-black mb-4 text-white text-center">
             CHECKOUT
           </h1>
-          <p className="text-center text-gray-400 text-base lg:text-lg">
+          <p className="text-center text-gray-400 text-base md:text-lg">
             Only few steps left to complete your purchase.
           </p>
         </div>
@@ -87,11 +88,11 @@ const Checkout = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <Label className="mb-3">First name</Label>
-                  <Input value={user?.firstName || ""} disabled />
+                  <Input value={user?.firstName || ""} />
                 </div>
                 <div>
                   <Label className="mb-3">Last name</Label>
-                  <Input value={user?.lastName || ""} disabled />
+                  <Input value={user?.lastName || ""} />
                 </div>
               </div>
             </div>
@@ -139,9 +140,10 @@ const Checkout = () => {
               <Button
                 onClick={handleCheckout}
                 disabled={items.length === 0 || !address}
-                className="w-full button-primary"
+                className="w-full button-primary crimson-glow-hover"
+                size="lg"
               >
-                Place Order — {total || 0}
+                Place Order :- {total || 0}
               </Button>
             </div>
           </div>
@@ -202,7 +204,7 @@ const Checkout = () => {
               </div>
               <div className="flex justify-between text-white font-bold mt-3 text-lg">
                 <span>Total</span>
-                <span>{total || 0}</span>
+                <span className="flex"><CreditIcon size={22} /> {total || 0}</span>
               </div>
             </div>
           </aside>

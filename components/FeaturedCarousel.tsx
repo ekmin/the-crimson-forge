@@ -7,6 +7,7 @@ import { Product } from "@/sanity/lib/types";
 import Image from "next/image";
 import imageUrl from "@/lib/imageUrl";
 import PortableText from "react-portable-text";
+import CreditIcon from "@/components/CreditIcon";
 
 interface FeaturedCarouselProps {
   products: Product[];
@@ -54,11 +55,11 @@ const FeaturedCarousel = ({ products }: FeaturedCarouselProps) => {
           <p className="text-sm text-crimson mb-2 tracking-wider">
             {product.categories.map((cat) => cat.title).join(", ")}
           </p>
-          <h2 className="text-lg md:text-5xl font-black mb-4 text-white">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 text-white">
             {product.name}
           </h2>
-          <p className="text-3xl font-bold text-crimson mb-6">
-            ${product.price.toLocaleString()}
+          <p className="text-3xl font-bold text-crimson mb-6 flex items-start">
+            <CreditIcon size={30} /> {product.price.toLocaleString()}
           </p>
           <PortableText
             className="text-gray-300 mb-8 leading-relaxed"
@@ -80,14 +81,12 @@ const FeaturedCarousel = ({ products }: FeaturedCarouselProps) => {
             }}
           />
 
-          <div className="flex gap-4">
             <Link
               href={`/products/${product._id}`}
               className="bg-crimson hover:bg-crimson text-white px-8 py-3 rounded-lg font-bold tracking-wider transition-all duration-200 crimson-glow-hover"
             >
               VIEW DETAILS
             </Link>
-          </div>
         </div>
       </div>
 

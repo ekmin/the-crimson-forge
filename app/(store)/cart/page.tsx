@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import imageUrl from "@/lib/imageUrl";
 import CartButtons from "@/components/CartButtons";
+import CreditIcon from "@/components/CreditIcon";
 
 const Cart = () => {
   const groupedItems = useCartStore((state) => state.getGroupedItems());
@@ -52,9 +53,14 @@ const Cart = () => {
   return (
     <div className="min-h-screen bg-black py-30">
       <div className="container mx-auto px-6">
-        <h1 className="text-5xl font-black mb-12 text-white text-center">
-          YOUR CART
-        </h1>
+        <div className="mb-12">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-black mb-4 text-white text-center">
+            YOUR CART
+          </h1>
+          <p className="text-center text-gray-400 text-sm md:text-lg">
+            Review your selected items and prepare to forge ahead!
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-4">
@@ -74,9 +80,9 @@ const Cart = () => {
                   )}
                 </div>
 
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <h3
-                    className="text-xl font-bold text-white mb-2 cursor-pointer"
+                    className="text-sm md:text-base lg:text-xl font-bold text-white mb-2 cursor-pointer truncate"
                     onClick={() => router.push(`/products/${item.product._id}`)}
                   >
                     {item.product.name}
@@ -86,11 +92,11 @@ const Cart = () => {
                       .map((category) => category.title)
                       .join(" | ")}
                   </p>
-                  <p className="text-xl font-bold text-crimson">
-                    ${item.product.price * item.quantity}
+                  <p className="text-lg md:text-xl font-bold text-crimson flex items-start">
+                    <CreditIcon size={22} /> {(item.product.price * item.quantity).toLocaleString()}
                   </p>
                 </div>
-                
+
                 <CartButtons product={item.product} />
               </div>
             ))}
@@ -114,7 +120,7 @@ const Cart = () => {
                 </div>
                 <div className="flex justify-between text-gray-300">
                   <span>Subtotal</span>
-                  <span>$ {useCartStore.getState().getTotalPrice()}</span>
+                  <span className="flex items-start"><CreditIcon size={20} /> {useCartStore.getState().getTotalPrice()}</span>
                 </div>
                 <div className="flex justify-between text-gray-300">
                   <span>Shipping</span>
@@ -124,25 +130,25 @@ const Cart = () => {
 
               <div className="flex justify-between text-xl font-bold mb-8">
                 <span className="text-white">Total</span>
-                <span className="text-crimson">
-                  ${useCartStore.getState().getTotalPrice()}
+                <span className="text-crimson flex items-start">
+                  <CreditIcon size={22} /> {useCartStore.getState().getTotalPrice()}
                 </span>
               </div>
 
               {isSignedIn ? (
                 <Link href="/checkout">
-                <Button
-                  size="lg"
-                  className="w-full bg-crimson hover:bg-crimson-glow text-white font-bold text-lg tracking-wider crimson-glow-hover transition-all duration-200 mb-4 cursor-pointer"
-                >
-                  PROCEED TO CHECKOUT
-                </Button>
+                  <Button
+                    size="lg"
+                    className="button-primary text-base crimson-glow-hover w-full mb-4"
+                  >
+                    PROCEED TO CHECKOUT
+                  </Button>
                 </Link>
               ) : (
                 <SignInButton mode="modal">
                   <Button
                     size="lg"
-                    className="w-full bg-crimson hover:bg-crimson-glow text-white font-bold text-lg tracking-wider crimson-glow-hover transition-all duration-200 mb-4 cursor-pointer"
+                    className="button-primary text-base crimson-glow-hover w-full mb-4"
                   >
                     SIGN IN TO CHECKOUT
                   </Button>
@@ -153,7 +159,7 @@ const Cart = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full border-crimson text-crimson hover:bg-crimson hover:text-white font-bold tracking-wider transition-all duration-200 cursor-pointer"
+                  className="w-full border-crimson text-crimson hover:bg-crimson hover:text-white font-bold tracking-wider transition-all duration-200 cursor-pointer rounded-lg"
                 >
                   CONTINUE SHOPPING
                 </Button>

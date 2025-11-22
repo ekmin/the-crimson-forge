@@ -28,7 +28,7 @@ const AddToCartButton = ({ product }: AddtoCartProps) => {
       <Button
         size="lg"
         className={
-          "bg-crimson hover:bg-[#ff1a1a] text-white font-bold text-lg tracking-wider crimson-glow-hover transition-all duration-200 cursor-pointer"
+          "button-primary crimson-glow-hover font-bold text-lg"
         }
         onClick={() => removeItem(product._id)}
         disabled={itemCount === 0}
@@ -40,7 +40,7 @@ const AddToCartButton = ({ product }: AddtoCartProps) => {
       </div>
       <Button
         size="lg"
-        className=" bg-crimson hover:bg-[#ff1a1a] text-white font-bold text-lg tracking-wider crimson-glow-hover transition-all duration-200 cursor-pointer"
+        className=" button-primary crimson-glow-hover font-bold text-lg"
         onClick={() => addItem(product)}
       >
         +

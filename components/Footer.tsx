@@ -1,4 +1,4 @@
-import { Flame, Shield, Zap } from "lucide-react";
+import { Flame, Shield, Zap, Heart } from "lucide-react";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 
@@ -66,7 +66,7 @@ const Footer = () => {
             </h4>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <Flame className="w-4 h-4 text-crimson mt-1 hrink-0" />
+                <Flame className="w-4 h-4 text-crimson mt-1 shrink-0" />
                 <p className="text-gray-400 text-sm">Forged to Endure</p>
               </div>
               <div className="flex items-start gap-3">
@@ -82,10 +82,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-[#1a1a1a] pt-8">
-          <p className="text-center text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} The Crimson Forge. All rights
-            reserved. Strength is earned, not given.
-          </p>
+          <p className="text-center text-gray-500 text-sm flex justify-center items-center flex-wrap">
+            Made with <Heart className="w-4 h-4 mx-1 text-crimson" /> by <Link href="https://portfolio-ekmins-projects.vercel.app" target="_blank" rel="noopener noreferrer" className="mx-1 hover:text-crimson transition-colors">Ekmin Samaraweera.</Link> All rights reserved © {new Date().getFullYear()}
+            </p>
         </div>
       </div>
     </footer>

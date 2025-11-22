@@ -6,6 +6,7 @@ import Image from "next/image";
 import imageUrl from "@/lib/imageUrl";
 import AddToCartButton from "@/components/AddToCartButton";
 import { Product } from "@/sanity/lib/types";
+import CreditIcon from "@/components/CreditIcon";
 
 const ProductbyId = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
@@ -18,7 +19,7 @@ const ProductbyId = async ({ params }: { params: Promise<{ id: string }> }) => {
           <h1 className="text-4xl font-bold mb-4 text-white">ITEM NOT FOUND</h1>
           <Link
             href="/products"
-            className="inline-block bg-crimson hover:bg-[#ff1a1a] text-white px-6 py-3 rounded-lg font-bold tracking-wider transition-all duration-200"
+            className="inline-block bg-crimson hover:bg-crimson-glow text-white px-6 py-3 rounded-lg font-bold tracking-wider transition-all duration-200"
           >
             RETURN TO ARSENAL
           </Link>
@@ -62,11 +63,11 @@ const ProductbyId = async ({ params }: { params: Promise<{ id: string }> }) => {
                 </Link>
               ))}
             </div>
-            <h1 className="text-xl md:text-5xl font-black mb-6 text-white">
+            <h1 className="text-2xl md:text-5xl font-black mb-6 text-white">
               {product.name}
             </h1>
-            <p className="text-4xl font-bold text-crimson mb-8">
-              ${product.price}
+            <p className="text-3xl md:text-4xl font-bold text-crimson mb-8 flex items-start">
+              <CreditIcon size={32} />{product.price}
             </p>
 
             {product.description && (

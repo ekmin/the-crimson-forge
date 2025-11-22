@@ -2,6 +2,7 @@ import { Product } from '@/sanity/lib/types'
 import Link from 'next/link';
 import imageUrl from "@/lib/imageUrl";
 import Image from 'next/image';
+import CreditIcon from './CreditIcon';
 
 interface ProductCardProps {
   product: Product;
@@ -28,7 +29,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             {product.name}
           </h3>
           <p className="text-sm text-gray-400 mb-4">{product.categories.map(cat => cat.title).join(" | ")}</p>
-          <p className="text-lg font-bold text-crimson">${product.price.toLocaleString()}</p>
+          <p className="text-lg font-bold text-crimson flex items-start"><CreditIcon size={22} />{product.price.toLocaleString()}</p>
         </div>
       </div>
     </Link>
