@@ -11,16 +11,16 @@ The site offers a fully functional shopping experience with authentication, cart
 
 ## Brand Identity 🎨
 
-# The Name: “The Crimson Forge”
+### The Name: “The Crimson Forge”
 The name reflects a fictional Sith foundry where elite weapons, artifacts, armor, and kyber-infused items are engineered.
 “Crimson” symbolizes the Sith’s iconic red lightsabers, and “Forge” represents craftsmanship.
 
-# Logo
+### Logo
 ![crimson-forge.png](https://github.com/ekmin/the-crimson-forge/blob/master/public/crimson-forge.png)
 This is designed to mimic the Sith eye. Symbolizing focus, intensity, and connection to the dark side.
 This identity helps the store feel like a true extension of the Star Wars universe.
 
-# Design Language
+### Design Language
 
 * Dark UI with black & deep-red palette
 * Emphasis on glows, outlines, grids, and sharp edges
@@ -126,6 +126,6 @@ This identity helps the store feel like a true extension of the Star Wars univer
 * orderItem
 * blockContent
 
-All fields are modeled to represent real product metadata, categories, and order details.
+All fields are modeled to represent real product data, categories, and order details.
 
 > Product images are taken from [Wookieepedia | Fandom](https://starwars.fandom.com/wiki/Main_Page)
