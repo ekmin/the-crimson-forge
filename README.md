@@ -157,3 +157,7 @@ This snapshot shows the structured fields used to define a category.
 This snapshot shows the structured fields of a customer's order.
 
 ![productSchema](https://github.com/ekmin/the-crimson-forge/blob/master/public/sanity-snapshots/orderSchema.gif)
+
+## License
+
+The software is published under the MIT License.
