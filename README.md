@@ -16,7 +16,7 @@ The name reflects a fictional Sith foundry where elite weapons, artifacts, armor
 “Crimson” symbolizes the Sith’s iconic red lightsabers, and “Forge” represents craftsmanship.
 
 ### Logo
-![crimson-forge.png](https://github.com/ekmin/the-crimson-forge/blob/master/public/crimson-forge.png)
+![crimson-forge.png](https://github.com/ekmin/the-crimson-forge/blob/master/public/crimson-forge-logo.png)
 This is designed to mimic the Sith eye. Symbolizing focus, intensity, and connection to the dark side.
 This identity helps the store feel like a true extension of the Star Wars universe.
 
