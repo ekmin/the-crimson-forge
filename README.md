@@ -16,7 +16,7 @@ The name reflects a fictional Sith foundry where elite weapons, artifacts, armor
 “Crimson” symbolizes the Sith’s iconic red lightsabers, and “Forge” represents craftsmanship.
 
 ### Logo
-![crimson-forge.png](https://github.com/ekmin/the-crimson-forge/blob/master/public/crimson-forge-logo.png)
+<img src="https://github.com/ekmin/the-crimson-forge/blob/master/public/crimson-forge-logo.png" alt="crimson-forge-logo" width="200" />
 This is designed to mimic the Sith eye. Symbolizing focus, intensity, and connection to the dark side.
 This identity helps the store feel like a true extension of the Star Wars universe.
 
@@ -133,22 +133,27 @@ All fields are modeled to represent real product data, categories, and order det
 ## Backend (Sanity Studio) ⚙️
 
 Here are a few views of the content management system (CMS) that powers this site.
+
 ![sanityStudio](https://github.com/ekmin/the-crimson-forge/blob/master/public/sanity-snapshots/studio-home.gif)
 
 ### Product Schema
 
 This snapshot shows the structured fields used to define a new product.
+
 ![productSchema](https://github.com/ekmin/the-crimson-forge/blob/master/public/sanity-snapshots/productSchema.gif)
 
-To update the fileds, all you have to do is the change the filed and click "publish"
+To update the fileds, all you have to do is the change the filed and click "publish".
+
 ![productSchema](https://github.com/ekmin/the-crimson-forge/blob/master/public/sanity-snapshots/productUpdate.gif)
 
 ### Category Schema
 
 This snapshot shows the structured fields used to define a category.
+
 ![productSchema](https://github.com/ekmin/the-crimson-forge/blob/master/public/sanity-snapshots/categorySchema.gif)
 
 ### Order Schema
 
 This snapshot shows the structured fields of a customer's order.
+
 ![productSchema](https://github.com/ekmin/the-crimson-forge/blob/master/public/sanity-snapshots/orderSchema.gif)
