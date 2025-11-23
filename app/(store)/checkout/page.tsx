@@ -88,11 +88,11 @@ const Checkout = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <Label className="mb-3">First name</Label>
-                  <Input value={user?.firstName || ""} />
+                  <Input value={user?.firstName || ""} disabled />
                 </div>
                 <div>
                   <Label className="mb-3">Last name</Label>
-                  <Input value={user?.lastName || ""} />
+                  <Input value={user?.lastName || ""} disabled />
                 </div>
               </div>
             </div>
