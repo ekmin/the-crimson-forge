@@ -134,7 +134,7 @@
 
 @layer utilities {
   .crimson-glow {
-    box-shadow: 0 0 15px #d00000;
+    box-shadow: 0 0 20px 5px #d00000;
   }
   .crimson-glow-hover:hover {
     box-shadow: 0 0 15px #ff1a1a;

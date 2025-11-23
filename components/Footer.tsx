@@ -83,7 +83,7 @@ const Footer = () => {
 
         <div className="border-t border-[#1a1a1a] pt-8">
           <p className="text-center text-gray-500 text-sm flex justify-center items-center flex-wrap">
-            Made with <Heart className="w-4 h-4 mx-1 text-crimson" /> by <Link href="https://portfolio-ekmins-projects.vercel.app" target="_blank" rel="noopener noreferrer" className="mx-1 hover:text-crimson transition-colors">Ekmin Samaraweera.</Link> All rights reserved © {new Date().getFullYear()}
+            Made with <Heart className="w-4 h-4 mx-1 text-crimson" /> by <Link href="https://portfolio-ekmins-projects.vercel.app" target="_blank" rel="noopener noreferrer" className="mx-1 text-crimson hover:text-crimson-glow transition-colors">Ekmin Samaraweera.</Link> All rights reserved © {new Date().getFullYear()}
             </p>
         </div>
       </div>
