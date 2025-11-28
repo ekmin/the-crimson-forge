@@ -17,10 +17,10 @@ const Products = async ({
     <div className="min-h-screen bg-black py-30">
       <div className="container mx-auto px-6">
         <div className="mb-12">
-          <h1 className="text-5xl font-black mb-4 text-white text-center">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-black mb-4 text-white text-center">
             THE ARSENAL
           </h1>
-          <p className="text-center text-gray-400 text-lg">
+          <p className="text-center text-gray-400 text-sm md:text-lg">
             Every weapon forged, every armor crafted for those who command power
           </p>
         </div>

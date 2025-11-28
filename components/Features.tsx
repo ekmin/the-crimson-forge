@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Features = () => {
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-[#0a0a0a]">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

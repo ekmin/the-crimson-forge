@@ -143,7 +143,7 @@ const Checkout = () => {
                 className="w-full button-primary crimson-glow-hover"
                 size="lg"
               >
-                Place Order :- {total || 0}
+                Place Order :- {(total).toLocaleString() || 0}
               </Button>
             </div>
           </div>
@@ -184,7 +184,7 @@ const Checkout = () => {
 
                     <div className="text-right">
                       <p className="text-white font-semibold">
-                        {product.price || 0}
+                        {(product.price).toLocaleString() || 0}
                       </p>
                       <p className="text-gray-400 text-sm">x{item.quantity}</p>
                     </div>
@@ -196,7 +196,7 @@ const Checkout = () => {
             <div className="mt-6 border-t border-[#1a1a1a] pt-4">
               <div className="flex justify-between text-gray-300">
                 <span>Subtotal</span>
-                <span>{total || 0}</span>
+                <span>{(total).toLocaleString() || 0}</span>
               </div>
               <div className="flex justify-between text-gray-300 mt-1">
                 <span>Shipping</span>
@@ -204,7 +204,7 @@ const Checkout = () => {
               </div>
               <div className="flex justify-between text-white font-bold mt-3 text-lg">
                 <span>Total</span>
-                <span className="flex"><CreditIcon size={22} /> {total || 0}</span>
+                <span className="flex"><CreditIcon size={22} /> {(total).toLocaleString() || 0}</span>
               </div>
             </div>
           </aside>

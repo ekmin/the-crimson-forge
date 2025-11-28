@@ -8,7 +8,7 @@ const FeaturedProducts = async () => {
   const featuredProducts = await getFeaturedProducts();
 
   return (
-      <section className="py-20 bg-[#0a0a0a]">
+      <section className="py-20 bg-black">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-12 text-white">
             FEATURED ARSENAL

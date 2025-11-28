@@ -104,7 +104,7 @@ const Cart = () => {
 
           <div className="lg:col-span-1">
             <div className="bg-[#111111] border border-[#1a1a1a] rounded-lg p-8 sticky top-24">
-              <h2 className="text-2xl font-bold mb-6 text-white">
+              <h2 className="text-xl md:text-2xl font-bold mb-6 text-white">
                 ORDER SUMMARY
               </h2>
 
@@ -120,7 +120,7 @@ const Cart = () => {
                 </div>
                 <div className="flex justify-between text-gray-300">
                   <span>Subtotal</span>
-                  <span className="flex items-start"><CreditIcon size={20} /> {useCartStore.getState().getTotalPrice()}</span>
+                  <span className="flex items-start"><CreditIcon size={20} /> {(useCartStore.getState().getTotalPrice()).toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between text-gray-300">
                   <span>Shipping</span>
@@ -131,7 +131,7 @@ const Cart = () => {
               <div className="flex justify-between text-xl font-bold mb-8">
                 <span className="text-white">Total</span>
                 <span className="text-crimson flex items-start">
-                  <CreditIcon size={22} /> {useCartStore.getState().getTotalPrice()}
+                  <CreditIcon size={22} /> {(useCartStore.getState().getTotalPrice()).toLocaleString()}
                 </span>
               </div>
 
