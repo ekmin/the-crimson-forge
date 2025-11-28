@@ -39,12 +39,14 @@ const Navbar = () => {
   const publicLinks = [
     { href: "/", label: "HOME" },
     { href: "/products", label: "PRODUCTS" },
+    { href: "/about", label: "ABOUT" },
   ];
 
   const authLinks = [
     { href: "/", label: "HOME" },
     { href: "/products", label: "PRODUCTS" },
     { href: "/orders", label: "MY ORDERS" },
+    { href: "/about", label: "ABOUT" },
   ];
 
   const itemCount = useCartStore((state) => 

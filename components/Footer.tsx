@@ -6,12 +6,14 @@ const Footer = () => {
   const publicLinks = [
     { href: "/", label: "Home" },
     { href: "/products", label: "Products" },
+    { href: "/about", label: "About" },
   ];
 
   const authLinks = [
     { href: "/", label: "Home" },
     { href: "/products", label: "Products" },
     { href: "/orders", label: "My Orders" },
+    { href: "/about", label: "About" },
   ];
 
   return (

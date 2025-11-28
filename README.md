@@ -22,7 +22,7 @@ This identity helps the store feel like a true extension of the Star Wars univer
 
 ### Design Language
 
-* Dark UI with black & deep-red palette
+* Dark UI with black & red palette
 * Emphasis on glows, outlines, grids, and sharp edges
 * Layout patterns inspired by Sith temples & Imperial interfaces
 * Consistent themed experience across all pages
@@ -42,13 +42,13 @@ This identity helps the store feel like a true extension of the Star Wars univer
     * Protected pages like “Checkout” and “My Orders”
 
 3. Dynamic Content via Sanity CMS
-    All data is fully dynamic:
+    * All data is fully dynamic:
         * Products
         * Categories
         * Featured items
         * Product details and images
         * Orders
-    CMS updates reflect on the frontend via GROQ queries.
+    * CMS updates reflect on the frontend via GROQ queries.
 
 4. Shopping Cart System
     * Global cart state using Zustand
@@ -56,11 +56,10 @@ This identity helps the store feel like a true extension of the Star Wars univer
     * Item count, remove, and total price calculation
 
 5. Checkout System
-    Two checkout methods:
+    * Two checkout methods:
         * Cash on Delivery
         * Card (Dummy Info)
-
-    Order is then stored in Sanity
+    * Order is then stored in Sanity
 
 6. Orders Dashboard
     * Authenticated users can view:
@@ -107,6 +106,11 @@ This identity helps the store feel like a true extension of the Star Wars univer
     * Lists all orders associated with logged-in user
     * Realtime updates using revalidatePath()
     * Cancel Order option (updates Sanity via server action)
+
+7. About Page
+    * The Crimson Forge origin story (Fictional)
+    * Animated elements
+    * Glowing box
 
 ## Tech Stack 🛠️
 | Requirement  | Technology |

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -117,15 +117,20 @@
 }
 
 @layer base {
- * {
+  * {
     @apply border-border;
   }
   body {
     @apply bg-black text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Orbitron', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Orbitron", sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -148,12 +153,25 @@
   .border-crimson {
     border-color: #d00000;
   }
+  .glow-box {
+    animation: crimsonPulse 2.5s infinite;
+  }
 }
 
-  .button-primary {
-    @apply bg-crimson hover:bg-crimson-glow font-bold tracking-wider text-white cursor-pointer rounded-lg transition-all duration-200;
-  }
+.button-primary {
+  @apply bg-crimson hover:bg-crimson-glow font-bold tracking-wider text-white cursor-pointer rounded-lg transition-all duration-200;
+}
 
-  .button-secondary {
-    @apply bg-transparent hover:bg-crimson border-2 border-crimson font-bold tracking-wider text-crimson hover:text-white cursor-pointer rounded-lg transition-colors duration-200;
+.button-secondary {
+  @apply bg-transparent hover:bg-crimson border-2 border-crimson font-bold tracking-wider text-crimson hover:text-white cursor-pointer rounded-lg transition-colors duration-200;
+}
+
+@keyframes crimsonPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 15px #d00000;
   }
+  50% {
+    box-shadow: 0 0 30px #ff1a1a;
+  }
+}
