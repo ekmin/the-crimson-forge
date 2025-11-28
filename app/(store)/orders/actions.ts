@@ -3,14 +3,14 @@
 import { backendClient } from "@/sanity/lib/backendClient";
 import { revalidatePath } from "next/cache";
 
-export async function cancelOrder(orderId: string) {
+export async function cancelOrder(orderId: string, payMethod: string) {
   try {
     if (!orderId) throw new Error("Order ID is required");
 
     await backendClient
       .patch(orderId)
       .set({
-        paymentStatus: "refunded",
+        paymentStatus: payMethod === "card" ? "refunded" : "canceled",
         deliveryStatus: "canceled",
       })
       .commit();
