@@ -65,6 +65,7 @@ export const orderType = defineType({
           { title: "Paid", value: "paid" },
           { title: "Failed", value: "failed" },
           { title: "Refunded", value: "refunded" },
+          { title: "Canceled", value: "canceled" },
         ],
         layout: "dropdown",
       },

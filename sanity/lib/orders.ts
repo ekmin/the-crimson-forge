@@ -8,6 +8,7 @@ export const getOrdersByUserId = async (userId: string) => {
   _id,
   clerkUserId,
   orderDate,
+  address,
   paymentMethod,
   paymentStatus,
   deliveryStatus,

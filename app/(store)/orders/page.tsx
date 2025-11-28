@@ -84,7 +84,7 @@ const Orders = async () => {
                     {order.paymentStatus || "Unknown Payment"}
                   </div>
                   <div
-                    className={`px-3 py-1 rounded-full text-sm ${statusBadge(order.deliveryStatus)}`}
+                    className={`px-3 py-1 rounded-full text-sm ${statusBadge(order.deliveryStatus)} ${order.paymentMethod === "cod" && order.deliveryStatus === "canceled" ? "hidden" : ""}`}
                   >
                     {order.deliveryStatus || "Unknown Delivery"}
                   </div>
@@ -127,13 +127,15 @@ const Orders = async () => {
                                   {product.name || "Unnamed product"}
                                 </p>
                                 <p className="text-gray-400 text-sm mt-1">
-                                  {product.categories.map((cat) => cat.title).join(", ")}
+                                  {product.categories
+                                    .map((cat) => cat.title)
+                                    .join(", ")}
                                 </p>
                               </div>
 
                               <div className="text-right">
                                 <p className="text-white font-medium">
-                                  {(product.price).toLocaleString() || 0}
+                                  {product.price.toLocaleString() || 0}
                                 </p>
                                 <p className="text-gray-400 text-sm">
                                   x {item.quantity}
@@ -152,7 +154,7 @@ const Orders = async () => {
                   <div className="mt-3 space-y-2 text-gray-300 text-sm">
                     <div className="flex justify-between">
                       <span>Subtotal</span>
-                      <span>{(order.totalPrice).toLocaleString() ?? 0}</span>
+                      <span>{order.totalPrice.toLocaleString() ?? 0}</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Shipping</span>
@@ -160,7 +162,7 @@ const Orders = async () => {
                     </div>
                     <div className="flex justify-between border-t border-gray-700 pt-2 text-white font-bold">
                       <span>Total</span>
-                      <span>{(order.totalPrice).toLocaleString() ?? 0}</span>
+                      <span>{order.totalPrice.toLocaleString() ?? 0}</span>
                     </div>
                   </div>
 
@@ -173,18 +175,20 @@ const Orders = async () => {
 
                   <div className="mt-4">
                     <h5 className="text-sm text-gray-400">Delivery</h5>
-                    <p className="text-sm text-white mt-1">
+                    <p className="text-sm text-white mt-1 capitalize">
                       {order.deliveryStatus || "—"}
                     </p>
-                    {order.address && (
                       <div className="mt-2 text-xs text-gray-300">
                         <div>{order.address}</div>
                       </div>
-                    )}
                   </div>
 
                   {order.deliveryStatus !== "delivered" && (
-                    <CancelOrderButton orderId={order._id} disabled={order.deliveryStatus === "canceled"} />
+                    <CancelOrderButton
+                      orderId={order._id}
+                      disabled={order.deliveryStatus === "canceled"}
+                      payMethod={order.paymentMethod}
+                    />
                   )}
                 </aside>
               </div>

@@ -4,13 +4,13 @@ import { cancelOrder } from "../app/(store)/orders/actions";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 
-const CancelOrderButton = ({ orderId, disabled }: { orderId: string, disabled: boolean }) => {
+const CancelOrderButton = ({ orderId, disabled, payMethod }: { orderId: string, disabled: boolean, payMethod: string }) => {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
   const handleCancel = () => {
     startTransition(async () => {
-      await cancelOrder(orderId);
+      await cancelOrder(orderId, payMethod);
     });
     router.refresh(); 
   };

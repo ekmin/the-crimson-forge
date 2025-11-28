@@ -38,7 +38,7 @@ export interface Order {
   items: OrderItem[];
   totalPrice: number;
   paymentMethod: "card" | "cod";
-  paymentStatus: "paid" | "pending" | "failed" | "refunded";
+  paymentStatus: "paid" | "pending" | "failed" | "refunded" | "canceled";
   deliveryStatus: "processing" | "shipped" | "delivered" | "canceled";
   orderDate: Date;
 }
