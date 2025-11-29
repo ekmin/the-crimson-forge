@@ -66,7 +66,7 @@ const ProductbyId = async ({ params }: { params: Promise<{ id: string }> }) => {
               {product.name}
             </h1>
             <p className="text-3xl md:text-4xl font-bold text-crimson mb-8 flex items-start">
-              <CreditIcon size={32} />{product.price}
+              <CreditIcon size={32} />{(product.price).toLocaleString()}
             </p>
 
             {product.description && (
